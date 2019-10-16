@@ -31,6 +31,7 @@ export default function UserRig() {
           material='color:#ccc; shader: standard; emissive:#000000; emissiveIntesity: 1.5; blending: multiply;'
         />
         <a-entity id='car' pitch-yaw
+          animation-mixer
           shadow='cast: true; receive: true'
           position='0 -1.5 -4'
           rotation='0 -90 -15'

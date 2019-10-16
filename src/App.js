@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import desertLogo from './assets/4120-logo-y.svg'
 import Scene from './components/react-components/scene'
 import MobileCtl from './components/react-components/mobilectl'
+import Checkout from './components/react-components/checkout-form'
+
 
 function App() {
   let isMobile = false
@@ -26,11 +28,14 @@ function App() {
     right: 0,
     margin: '1em'
   }
+
+
   return (
     <div className='app'>
       <Head>
         <Logo className='4120-logo' src={desertLogo} style={topRight} />
         {isMobile ? <MobileCtl /> : <> </>}
+        <Checkout />
       </Head>
       <Scene />
     </div>

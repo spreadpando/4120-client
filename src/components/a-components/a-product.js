@@ -13,7 +13,7 @@ AFRAME.registerComponent('product', {
         var el = this.el
 
         el.addEventListener('click', e => {
-            console.log('clicked')
+            el.emit('sink', { product: 'blah' }, true);
         })
         el.addEventListener('mouseenter', e => {
             console.log('mouseentered')
