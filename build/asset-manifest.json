@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ac4f1ff.chunk.css",
+    "main.js": "/static/js/main.aae6cd96.chunk.js",
+    "main.js.map": "/static/js/main.aae6cd96.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.30acd3cb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.30acd3cb.js.map",
+    "static/js/2.48945415.chunk.js": "/static/js/2.48945415.chunk.js",
+    "static/js/2.48945415.chunk.js.map": "/static/js/2.48945415.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fcd605e329c6da676d0108e744c14e66.js": "/precache-manifest.fcd605e329c6da676d0108e744c14e66.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.2ac4f1ff.chunk.css.map": "/static/css/main.2ac4f1ff.chunk.css.map",
+    "static/media/4120-logo-y.svg": "/static/media/4120-logo-y.740bfe7c.svg",
+    "static/media/desert-sky.png": "/static/media/desert-sky.77a632b9.png",
+    "static/media/down.svg": "/static/media/down.29bf261c.svg",
+    "static/media/ground.jpg": "/static/media/ground.88de0df4.jpg",
+    "static/media/left.svg": "/static/media/left.92a28d9a.svg",
+    "static/media/right.svg": "/static/media/right.593ccdac.svg",
+    "static/media/up.svg": "/static/media/up.05d73c6f.svg",
+    "static/media/vr_logo.png": "/static/media/vr_logo.f848685e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30acd3cb.js",
+    "static/js/2.48945415.chunk.js",
+    "static/css/main.2ac4f1ff.chunk.css",
+    "static/js/main.aae6cd96.chunk.js"
+  ]
+}
