@@ -6,7 +6,7 @@ export default function UserRig() {
       <a-entity
         id="user-rig"
         camera="active:true"
-        look-controls="enabled: true; hmdEnabled: true; pointerLockEnabled:true; gyroEnabled:true;"
+        look-controls="enabled: true; hmdEnabled: true; pointerLockEnabled:true;"
         wasd-controls="enabled:true; adEnabled: true; wsEnabled: true; fly: false; acceleration: 265;"
         position="0 5 0"
         rotation="-15 0 0"
