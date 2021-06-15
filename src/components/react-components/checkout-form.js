@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PaypalExpressBtn from "react-paypal-express-checkout";
 
 export default function Checkout() {
-  const [vis, setVis] = useState("hidden");
+  const [vis, setVis] = useState(false);
   const Form = styled.form`
     width: 40vw;
     @media (max-width: 600px) {
