@@ -6,6 +6,9 @@ export default function Checkout() {
   const [vis, setVis] = useState("hidden");
   const Form = styled.form`
     width: 40vw;
+    @media (max-width: 600px) {
+      width: 100vw;
+    }
     height: 80vh;
     position: absolute;
     z-index: 1000;
