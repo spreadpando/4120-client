@@ -16,7 +16,6 @@ export default function Checkout() {
     bottom: 0;
     margin: 20vw 2vw 0 0;
     text-align: right;
-    visibility: ${vis};
     p {
       font-family: "Ubuntu Mono", monospace;
       color: white;
@@ -36,13 +35,18 @@ export default function Checkout() {
       font-family: "Ubuntu Mono", monospace;
     }
   `;
+
+  const Modal = styled.div`
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: ${vis ? "visible" : "hidden"};
+  `;
   document.addEventListener("sink", () => {
     setVis("visible");
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "q") {
-      setVis("hidden");
-    }
   });
 
   const onSuccess = (payment) => {
@@ -69,12 +73,12 @@ export default function Checkout() {
   let total = 30; // this is the total amount (based on currency) to charge
   // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
-  const client = {
-    sandbox:
-      "AXvVn6riyctY_4FZCkjZWoYm2yBZ146feq-IBKggKj54X17E4X7yaYd6QjioAFIXKWnwhcTKI_QQ31rq",
-    production:
-      "AeMCxoGmMhadBxWipifxo_NUXPF7_gpN7-3iBMi1jjCbQfk5-R8kNvI-iF5pV7SwSgVx7_swLBPeT3dp",
-  };
+  // const client = {
+  //   sandbox:
+  //     "AXvVn6riyctY_4FZCkjZWoYm2yBZ146feq-IBKggKj54X17E4X7yaYd6QjioAFIXKWnwhcTKI_QQ31rq",
+  //   production:
+  //     "AeMCxoGmMhadBxWipifxo_NUXPF7_gpN7-3iBMi1jjCbQfk5-R8kNvI-iF5pV7SwSgVx7_swLBPeT3dp",
+  // };
   // In order to get production's app-ID, you will have to send your app to Paypal for approval first
   // For your sandbox Client-ID (after logging into your developer account, please locate the "REST API apps" section, click "Create App" unless you have already done so):
   //   => https://developer.paypal.com/docs/classic/lifecycle/sb_credentials/
@@ -85,40 +89,42 @@ export default function Checkout() {
   // NB. You can also have many Paypal express checkout buttons on page, just pass in the correct amount and they will work!
 
   return (
-    <Form>
-      <p> press esc to unlink mouse</p>
-      <p>press q to exit checkout</p>
-      <label for="name">name</label>
-      <input name="name" type="text" />
-      <br></br>
-      <label for="email">email</label>
-      <input name="email" type="email" />
-      <br></br>
-      <label for="street">street</label>
-      <input name="street" type="text" />
-      <br></br>
-      <label for="city">city</label>
-      <input name="city" type="text" />
-      <br></br>
-      <label for="state">two letter state code</label>
-      <input name="state" type="text" />
-      <br></br>
-      <label for="zip">zip code</label>
-      <input name="zip" type="text" />
-      <br></br>
-      <input name="size" value="m" type="radio" />
-      <label for="m">M </label>
-      <input name="size" value="l" type="radio" />
-      <label for="l">L </label>
-      <input name="size" value="xl" type="radio" />
-      <label for="xl">XL </label>
-      <input name="size" value="xxl" type="radio" />
-      <label for="xxl">XXL </label>
-      <br></br>
-      <label for="communique">email subscribe</label>
-      <input name="communique" type="checkbox" />
-      <br></br>
-      <p>checkout is suspended. promotion has ended.</p>
-    </Form>
+    <Modal onClick={() => setVis(!vis)}>
+      <Form>
+        <p> press esc to unlink mouse</p>
+        <p onClick={() => setVis(!vis)}>exit checkout</p>
+        <label for="name">name</label>
+        <input name="name" type="text" />
+        <br></br>
+        <label for="email">email</label>
+        <input name="email" type="email" />
+        <br></br>
+        <label for="street">street</label>
+        <input name="street" type="text" />
+        <br></br>
+        <label for="city">city</label>
+        <input name="city" type="text" />
+        <br></br>
+        <label for="state">two letter state code</label>
+        <input name="state" type="text" />
+        <br></br>
+        <label for="zip">zip code</label>
+        <input name="zip" type="text" />
+        <br></br>
+        <input name="size" value="m" type="radio" />
+        <label for="m">M </label>
+        <input name="size" value="l" type="radio" />
+        <label for="l">L </label>
+        <input name="size" value="xl" type="radio" />
+        <label for="xl">XL </label>
+        <input name="size" value="xxl" type="radio" />
+        <label for="xxl">XXL </label>
+        <br></br>
+        <label for="communique">email subscribe</label>
+        <input name="communique" type="checkbox" />
+        <br></br>
+        <p>checkout is suspended. promotion has ended.</p>
+      </Form>
+    </Modal>
   );
 }
